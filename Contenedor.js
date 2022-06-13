@@ -16,16 +16,18 @@ class Contenedor {
     saveById(id, objeto) {
         const index = this.productos.findIndex(producto => producto.id === id)
         if (index != -1) {
+            objeto.id = id;
             this.productos[index] = objeto;
             return objeto;
         } else {
-            return `No se encontró el objeto de ID ${objeto.id}`
+            return `No se encontró el producto con ID ${id}`
         }
     }
 
     getById(id) {
-        const objeto = this.productos.find(objeto => objeto.id === id);
-        return (objeto ? objeto : `No se encontro el objeto con id ${id}`);
+        const objeto = this.productos.find(producto => producto.id === id);
+        console.log(objeto)
+        return (objeto ? objeto : `No se encontró el producto con ID ${id}`);
     }
 
     getAll() {
@@ -33,9 +35,9 @@ class Contenedor {
     }
 
     deleteById(id) {
-        const nuevoArray = this.productos.filter(objeto => objeto.id !== id);
+        const nuevoArray = this.productos.filter(producto => producto.id !== id);
         this.productos = nuevoArray;
-        return `Producto de ID ${id} eliminado.`
+        return `Producto con ID ${id} eliminado.`
     }
 }
 

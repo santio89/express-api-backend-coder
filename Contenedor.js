@@ -20,14 +20,13 @@ class Contenedor {
             this.productos[index] = objeto;
             return objeto;
         } else {
-            return `No se encontró el producto con ID ${id}`
+            return {error: `No se encontró el producto con ID ${id}`}
         }
     }
 
     getById(id) {
         const objeto = this.productos.find(producto => producto.id === id);
-        console.log(objeto)
-        return (objeto ? objeto : `No se encontró el producto con ID ${id}`);
+        return (objeto ? objeto : {error: `No se encontró el producto con ID ${id}`});
     }
 
     getAll() {
@@ -35,9 +34,13 @@ class Contenedor {
     }
 
     deleteById(id) {
-        const nuevoArray = this.productos.filter(producto => producto.id !== id);
-        this.productos = nuevoArray;
-        return `Producto con ID ${id} eliminado.`
+        const index = this.productos.findIndex(producto => producto.id === id)
+        if (index != -1) {
+            this.productos.splice(index, 1);
+            return {success: `Producto con ID ${id} eliminado`}
+        } else {
+            return {error: `No se encontró el producto con ID ${id}`}
+        }
     }
 }
 

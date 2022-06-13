@@ -16,7 +16,7 @@ router.get("/:id", (req, res)=>{
 })
 
 router.post("/", (req, res)=>{
-    res.json(contenedorProductos.save(req.body));
+    res.json(contenedorProductos.save(req.body))
 })
 
 router.put("/:id", (req, res)=>{
@@ -24,7 +24,7 @@ router.put("/:id", (req, res)=>{
 })
 
 router.delete("/:id", (req, res)=>{
-    res.send(contenedorProductos.deleteById(Number(req.params.id)));
+    res.json(contenedorProductos.deleteById(Number(req.params.id)));
 })
 
 module.exports = router;

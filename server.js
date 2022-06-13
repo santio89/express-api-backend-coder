@@ -9,6 +9,15 @@ app.use(express.urlencoded({ extended: true }))
 app.use("/", express.static(__dirname + "/public"))
 app.use("/api/productos", routes)
 
+app.use((req, res) => {
+    res.status(404).send("No pudimos encontrar la dirección")
+})
+
+app.use((err, req, res) => {
+    console.error(err)
+    res.status(500).send("Ocurrió un error")
+})
+
 app.listen(port, (err) => {
     if (!err) {
         console.log(`El servidor se inicio en el puerto ${port}`)

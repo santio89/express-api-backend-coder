@@ -18,6 +18,14 @@ app.use((err, req, res) => {
     res.status(500).send("Ocurrió un error")
 })
 
+// error handler
+app.use(function (err, req, res, next) {
+    res.status(500).json({
+        error: err.message,
+    });
+});
+
+
 app.listen(port, (err) => {
     if (!err) {
         console.log(`El servidor se inicio en el puerto ${port}`)

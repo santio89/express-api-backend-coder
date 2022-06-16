@@ -18,7 +18,7 @@ class Contenedor {
         if (index != -1) {
             objeto.id = id;
             this.productos[index] = objeto;
-            return objeto;
+            return this.productos[index];
         } else {
             return {error: `No se encontró el producto con ID ${id}`}
         }

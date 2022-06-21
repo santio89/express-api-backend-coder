@@ -1,15 +1,17 @@
-<h1>Productos</h1>
-<table>
-    <tr>
-        <th>Título</th>
-        <th>Portada</th>
-        <th>Precio</th>
-    </tr>
-    {{#each items}}
-    <tr>
-        <td>{{this.title}}</td>
-        <td><img alt="item img" src="{{this.thumbnail}}"/></td>
-        <td>${{this.price}} USD</td>
-    </tr>
-    {{/each}}
-</table>
+<section class="productos">
+    <h2>Productos</h2>
+    <table>
+        <tr>
+            <th>TITULO</th>
+            <th>PORTADA</th>
+            <th>PRECIO</th>
+        </tr>
+        {{#each items}}
+        <tr>
+            <td>{{this.title}}</td>
+            <td><img alt="item img" src="{{this.thumbnail}}" /></td>
+            <td>${{this.price}} USD</td>
+        </tr>
+        {{/each}}
+    </table>
+</section>

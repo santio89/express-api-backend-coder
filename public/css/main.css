@@ -1,1 +1,201 @@
-/*# sourceMappingURL=main.css.map */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: rgb(50, 50, 50);
+  font-size: 1.2rem;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  background: rgb(30, 30, 30);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+header nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav p {
+  color: coral;
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin-left: 1rem;
+}
+header nav ul {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  list-style: none;
+  margin-right: 1rem;
+}
+header nav ul li {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+header nav ul li a {
+  padding: 0.2em 1rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+header nav ul li a:hover, header nav ul li a:focus {
+  background: coral;
+}
+
+h2 {
+  text-shadow: 1px 1px 0 rgb(120, 120, 120);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+section {
+  width: 100%;
+  min-height: calc(100vh - 60px - 40px);
+  margin-top: 60px;
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formulario {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-items: center;
+}
+.formulario form {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-items: start;
+  gap: 0.8rem;
+}
+.formulario form label {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: start;
+  gap: 0.2rem;
+  color: rgb(120, 120, 120);
+  font-weight: bold;
+  text-shadow: 1px 1px 0 rgb(30, 30, 30);
+}
+.formulario form label input {
+  color: rgb(30, 30, 30);
+  border-radius: 0.1em;
+  line-height: 1.4;
+  border: none;
+  outline: none;
+}
+.formulario form label input:focus {
+  outline: 2px solid coral;
+}
+.formulario form button {
+  margin-top: 1rem;
+  align-self: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: coral;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2em;
+  border-radius: 0.1em;
+}
+.formulario form button:hover, .formulario form button:focus {
+  outline: 4px solid rgb(30, 30, 30);
+}
+
+.productos {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.productos table {
+  max-width: 1200px;
+  margin: auto;
+  border-collapse: collapse;
+  border-radius: 0.8em;
+  outline: 4px solid coral;
+  margin-bottom: 4rem;
+  color: rgb(120, 120, 120);
+  text-shadow: 1px 1px 0 rgb(30, 30, 30);
+  font-weight: bold;
+}
+.productos table tr,
+.productos table th,
+.productos table td {
+  padding: 0.4em 2em;
+  text-align: center;
+}
+.productos table tr td:first-child {
+  border-left: none;
+}
+.productos table tr td:last-child {
+  border-right: none;
+}
+.productos table tr:last-child td {
+  border-bottom: none;
+}
+.productos table td {
+  border: 1px dashed rgb(30, 30, 30);
+}
+.productos table th {
+  color: coral;
+}
+.productos table img {
+  aspect-ratio: 4/5;
+  width: 80px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.2em;
+}
+
+footer {
+  width: 100%;
+  height: 40px;
+  color: rgb(30, 30, 30);
+  padding: 0.4em;
+  background: coral;
+  font-weight: bold;
+  margin-top: auto;
+}/*# sourceMappingURL=main.css.map */

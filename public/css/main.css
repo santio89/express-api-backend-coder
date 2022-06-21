@@ -33,6 +33,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  overflow: hidden;
 }
 header nav {
   width: 100%;
@@ -41,11 +42,17 @@ header nav {
   justify-content: space-between;
   align-items: center;
 }
-header nav p {
+header nav a {
   color: coral;
   font-weight: bold;
   font-size: 1.8rem;
   margin-left: 1rem;
+  text-decoration: none;
+  padding: 0.2em;
+  border-radius: 0.1em;
+}
+header nav a:focus-visible {
+  outline: 2px dashed coral;
 }
 header nav ul {
   height: 100%;
@@ -69,6 +76,7 @@ header nav ul li a {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  border-radius: 0;
 }
 header nav ul li a:hover, header nav ul li a:focus {
   background: coral;
@@ -76,10 +84,10 @@ header nav ul li a:hover, header nav ul li a:focus {
 
 h2 {
   text-shadow: 1px 1px 0 rgb(120, 120, 120);
-  font-size: 2rem;
+  font-size: clamp(2.2rem, 2.2rem + 10%, 3.2rem);
   font-weight: bold;
   margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
 }
 
 section {
@@ -106,6 +114,7 @@ section {
   justify-content: start;
   align-items: start;
   gap: 0.8rem;
+  font-size: clamp(1.2rem, 1.2rem + 10%, 1.4rem);
 }
 .formulario form label {
   display: flex;
@@ -158,8 +167,10 @@ section {
   outline: 4px solid coral;
   margin-bottom: 4rem;
   color: rgb(120, 120, 120);
-  text-shadow: 1px 1px 0 rgb(30, 30, 30);
+  text-shadow: 1px 1px 0 rgb(50, 50, 50);
   font-weight: bold;
+  background: rgb(30, 30, 30);
+  font-size: clamp(1.2rem, 1.2rem + 10%, 1.4rem);
 }
 .productos table tr,
 .productos table th,
@@ -177,10 +188,12 @@ section {
   border-bottom: none;
 }
 .productos table td {
-  border: 1px dashed rgb(30, 30, 30);
+  border: 1px dashed rgb(50, 50, 50);
 }
 .productos table th {
   color: coral;
+  font-size: 1.2em;
+  padding: 0.8em 2em;
 }
 .productos table img {
   aspect-ratio: 4/5;

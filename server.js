@@ -1,22 +1,38 @@
 const express = require("express")
+const { engine } = require('express-handlebars');
+const path = require("path")
 const app = express();
 const port = 8080;
-const routes = require("./routes/index");
+const routesApi = require("./routes/indexApi.routes").router;
+const routesView = require("./routes/indexView.routes").router;
 
+
+/* view engine */
+app.engine('hbs', engine({
+    extname: '.hbs',
+    defaultLayout: path.join(__dirname, './views/layout/main.hbs'),
+    layoutsDir: path.join(__dirname, './views/layout'),
+    partialsDir: path.join(__dirname, './views/partials')
+}));
+app.set('view engine', 'hbs');
+app.set('views', './views');
+
+
+/* post url encode */
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.use("/", express.static(__dirname + "/public"))
-app.use("/api/productos", routes)
 
+/* routes main */
+app.use("/", routesView)
+app.use("/api/productos", routesApi)
+
+
+/* not found */
 app.use((req, res) => {
-    res.status(404).send("No pudimos encontrar la dirección")
+    res.status(404).render("404");
 })
 
-app.use((err, req, res) => {
-    console.error(err)
-    res.status(500).send("Ocurrió un error")
-})
 
 // error handler
 app.use(function (err, req, res, next) {
@@ -26,6 +42,7 @@ app.use(function (err, req, res, next) {
 });
 
 
+/* start server */
 app.listen(port, (err) => {
     if (!err) {
         console.log(`El servidor se inicio en el puerto ${port}`)

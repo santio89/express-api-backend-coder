@@ -7,15 +7,18 @@ const routesApi = require("./routes/indexApi.routes").router;
 const routesView = require("./routes/indexView.routes").router;
 
 
-/* view engine */
+/* handlebars config */
 app.engine('hbs', engine({
     extname: '.hbs',
     defaultLayout: path.join(__dirname, './views/layout/main.hbs'),
     layoutsDir: path.join(__dirname, './views/layout'),
     partialsDir: path.join(__dirname, './views/partials')
 }));
-app.set('view engine', 'hbs');
+/* views folder*/
 app.set('views', './views');
+/* view engine: alternar entre hbs/pug/ejs */
+app.set('view engine', 'pug');
+
 
 
 /* post url encode */

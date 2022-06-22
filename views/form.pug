@@ -1,0 +1,13 @@
+extends layout/main.pug
+
+block main
+    section.formulario
+        h2 CARGAR PRODUCTO
+        form(method="post", action="/api/productos")
+            label Título: 
+                input(type="text", name="title")
+            label Precio: 
+                input(type="text", name="price")
+            label Thumbnail URL:
+                input(type="text", name="thumbnail")
+            button Enviar

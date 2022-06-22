@@ -101,6 +101,10 @@ section {
   max-width: 1800px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: start;
+  align-items: center;
 }
 
 .formulario {
@@ -163,6 +167,12 @@ section {
   align-items: center;
   width: 100%;
 }
+.productos p {
+  font-size: 1.8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: white;
+}
 .productos table {
   max-width: 1200px;
   margin-left: auto;
@@ -216,4 +226,11 @@ footer {
   background: coral;
   font-weight: bold;
   margin-top: auto;
+}
+
+.error404 p {
+  font-size: 1.8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: white;
 }/*# sourceMappingURL=main.css.map */

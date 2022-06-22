@@ -6,7 +6,6 @@ const port = 8080;
 const routesApi = require("./routes/indexApi.routes").router;
 const routesView = require("./routes/indexView.routes").router;
 
-
 /* handlebars config */
 app.engine('hbs', engine({
     extname: '.hbs',
@@ -14,29 +13,28 @@ app.engine('hbs', engine({
     layoutsDir: path.join(__dirname, './views/layout'),
     partialsDir: path.join(__dirname, './views/partials')
 }));
+
 /* views folder*/
 app.set('views', './views');
+
 /* view engine: alternar entre hbs/pug/ejs */
 app.set('view engine', 'pug');
-
-
 
 /* post url encode */
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+/* serve static files */
 app.use(express.static(path.join(__dirname, "./public")))
 
 /* routes main */
 app.use("/", routesView)
 app.use("/api/productos", routesApi)
 
-
 /* not found */
 app.use((req, res) => {
     res.status(404).render("404");
 })
-
 
 // error handler
 app.use(function (err, req, res, next) {
@@ -44,7 +42,6 @@ app.use(function (err, req, res, next) {
         error: err.message,
     });
 });
-
 
 /* start server */
 app.listen(port, (err) => {

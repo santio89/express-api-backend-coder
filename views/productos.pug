@@ -11,11 +11,11 @@ block main
                         th PRECIO
                     
                 
-                    each val in items
+                    each item in items
                         tr
-                            td= val.title 
+                            td= item.title 
                             td
-                                img(alt="item img", src=`${val.thumbnail}`)
-                            td= `$${val.price} USD`
+                                img(alt="item img", src=`${item.thumbnail}`)
+                            td= `$${item.price} USD`
             else
                 p No hay productos cargados.

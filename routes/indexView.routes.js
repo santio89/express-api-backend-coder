@@ -1,13 +1,9 @@
 const express = require("express")
 const router = express.Router();
-const items = require("./indexApi.routes").contenedorProductos.productos;
+const {formView, productsView} = require("../controllers/viewController");
 
-router.get("/", (req, res)=>{
-    res.render("form")
-})
+router.get("/", formView)
 
-router.get("/productos", (req, res)=>{
-    res.render("productos", {items})
-})
+router.get("/productos", productsView)
 
 module.exports = {router};

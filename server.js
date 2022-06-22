@@ -18,7 +18,7 @@ app.engine('hbs', engine({
 app.set('views', './views');
 
 /* view engine: alternar entre hbs/pug/ejs */
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 
 /* post url encode */
 app.use(express.json())

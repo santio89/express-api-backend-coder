@@ -3,8 +3,8 @@ const { engine } = require('express-handlebars');
 const path = require("path")
 const app = express();
 const port = 8080;
-const routesApi = require("./routes/indexApi.routes").router;
-const routesView = require("./routes/indexView.routes").router;
+const routesApi = require("./routes/indexApiRoutes").router;
+const routesView = require("./routes/indexViewRoutes").router;
 
 /* handlebars config */
 app.engine('hbs', engine({

@@ -1,4 +1,4 @@
-const contenedor = require("../controllers/apiController").contenedorProductos;
+const contenedor = require("./apiController").contenedorProductos;
 const items = contenedor.productos;
 
 const formView = (req, res)=>{

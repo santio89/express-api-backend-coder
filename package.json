@@ -12,7 +12,7 @@
     "start": "node server.js",
     "devStart": "nodemon server.js"
   },
-  "name": "entrega-4",
+  "name": "express-api-backendcoder",
   "version": "1.0.0",
   "main": "server.js",
   "keywords": [],

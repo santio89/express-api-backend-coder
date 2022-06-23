@@ -123,6 +123,10 @@ section {
   align-items: start;
   gap: 0.8rem;
   font-size: clamp(1.2rem, 1.2rem + 10%, 1.4rem);
+  background: rgb(30, 30, 30);
+  outline: 4px solid rgb(90, 90, 90);
+  border-radius: 0.8em;
+  padding: 1em;
 }
 .formulario form label {
   display: flex;
@@ -178,13 +182,13 @@ section {
   margin-left: auto;
   margin-right: auto;
   border-collapse: collapse;
-  border-radius: 0.8em;
-  outline: 4px solid rgb(90, 90, 90);
   margin-bottom: 4rem;
   color: rgb(120, 120, 120);
   text-shadow: 1px 1px 0 rgb(50, 50, 50);
   font-weight: bold;
   background: rgb(30, 30, 30);
+  outline: 4px solid rgb(90, 90, 90);
+  border-radius: 0.8em;
   font-size: clamp(1.2rem, 1.2rem + 10%, 1.4rem);
 }
 .productos table tr,

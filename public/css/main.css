@@ -148,9 +148,6 @@ section {
   max-width: 100%;
   font-size: 0.8em;
   background: rgb(120, 120, 120);
-  /*        &.formRadio[type="radio"]:not(:checked) + input{
-             display: none;
-         } */
 }
 .formulario form label input[type=file] {
   background: none;
@@ -173,6 +170,18 @@ section {
 }
 .formulario form label input:focus {
   outline: 2px solid coral;
+}
+.formulario form label span:has(input[type=radio]:not(:checked)) + input {
+  display: none;
+}
+.formulario form label.formulario__radio {
+  display: block;
+}
+.formulario form label.formulario__radio input[type=radio]:not(:checked) + input {
+  display: none;
+}
+.formulario form label.formulario__radio input[type=text], .formulario form label.formulario__radio input[type=file] {
+  display: block;
 }
 .formulario form button {
   margin-top: 1rem;

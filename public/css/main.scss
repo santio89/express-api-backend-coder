@@ -146,7 +146,7 @@ section {
             font-weight: bold;
             text-shadow: 1px 1px 0 rgb(30, 30, 30);
             max-width: 100%;
-            
+
             input {
                 color: rgb(30, 30, 30);
                 border-radius: .1em;
@@ -155,9 +155,9 @@ section {
                 outline: none;
                 max-width: 100%;
                 font-size: .8em;
-                background: rgb(120,120,120);
-                
-                &[type="file"]{
+                background: rgb(120, 120, 120);
+
+                &[type="file"] {
                     background: none;
                     outline: none;
                     border: none;
@@ -165,17 +165,17 @@ section {
                     background: rgb(30, 30, 30);
                     color: white;
 
-                    &:focus{
+                    &:focus {
                         outline: 2px solid coral;
                     }
                 }
 
-                &[type="radio"]{
+                &[type="radio"] {
                     accent-color: coral;
                     outline: none;
                     border: none;
 
-                    &:focus{
+                    &:focus {
                         outline: none;
                     }
                 }
@@ -183,10 +183,20 @@ section {
                 &:focus {
                     outline: 2px solid coral;
                 }
+            }
 
-         /*        &.formRadio[type="radio"]:not(:checked) + input{
+            span:has(input[type="radio"]:not(:checked)) + input{
+                display: none;
+            }
+
+            &.formulario__radio{
+                display: block;
+                input[type="radio"]:not(:checked) + input{
                     display: none;
-                } */
+                }
+                input[type="text"], input[type="file"]{
+                    display: block;
+                }
             }
         }
 
@@ -216,8 +226,8 @@ section {
     justify-content: start;
     align-items: center;
     width: 100%;
-    
-    p{
+
+    p {
         font-size: 1.8rem;
         max-width: 1200px;
         margin: 0 auto;
@@ -292,8 +302,8 @@ footer {
     margin-top: auto;
 }
 
-.error404{
-    p{
+.error404 {
+    p {
         font-size: 1.8rem;
         max-width: 1200px;
         margin: 0 auto;

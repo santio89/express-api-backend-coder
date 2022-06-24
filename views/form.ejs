@@ -3,10 +3,11 @@
 
 <section class="formulario">
     <h2>CARGAR PRODUCTO</h2>
-    <form method="post" action="/productos">
-        <label>Título: <input type="text" name="title"></label>
-        <label>Precio: <input type="text" name="price"></label>
-        <label>Thumbnail URL: <input type="text" name="thumbnail"></label>
+    <form method="post" action="/productos" enctype="multipart/form-data">
+        <label>Título: <input type="text" name="title" required></label>
+        <label>Precio: <input type="text" name="price" required></label>
+        <label><span><input type="radio" name="formImage" value="url" class="formRadio" required> Imagen - URL: </span><input type="text" name="thumbnail"></label>
+        <label><span><input type="radio" name="formImage" value="file" class="formRadio" required> Imagen - Cargar </span><input id="formFile" type="file" name="imgFile"></label>
         <button>Enviar</button>
     </form>
 </section>

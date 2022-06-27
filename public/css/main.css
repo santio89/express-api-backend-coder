@@ -14,7 +14,22 @@ html {
   scroll-padding-top: 60px;
 }
 
-ul, ol, li, a, h1, h2, h3, p, body, header, section, footer, .container, .container-fluid, .row, .col {
+ul,
+ol,
+li,
+a,
+h1,
+h2,
+h3,
+p,
+body,
+header,
+section,
+footer,
+.container,
+.container-fluid,
+.row,
+.col {
   margin: 0;
   padding: 0;
 }
@@ -36,7 +51,10 @@ ul {
   list-style: none;
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   font: inherit;
 }
 
@@ -225,7 +243,8 @@ section {
 .formulario form label.formulario__radio input[type=radio]:not(:checked) + input {
   display: none;
 }
-.formulario form label.formulario__radio input[type=text], .formulario form label.formulario__radio input[type=file] {
+.formulario form label.formulario__radio input[type=text],
+.formulario form label.formulario__radio input[type=file] {
   display: block;
 }
 .formulario form button {
@@ -293,6 +312,67 @@ section {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 0.2em;
+}
+
+.chat {
+  font-size: clamp(1.2rem, 1.2rem + 10%, 1.4rem);
+}
+.chat__container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+  width: 100%;
+  width: clamp(280px, 100%, 800px);
+}
+.chat__container input {
+  color: rgb(30, 30, 30);
+  border-radius: 0.1em;
+  line-height: 1.4;
+  border: none;
+  outline: none;
+  max-width: 100%;
+  font-size: 0.8em;
+  background: rgb(120, 120, 120);
+}
+.chat__container input.chat__container__nombre {
+  color: coral;
+  font-weight: bold;
+  background: transparent;
+  padding: 0.2em;
+  font-size: 1.2em;
+  border-bottom: 2px dashed coral;
+  align-self: center;
+  width: 100%;
+}
+.chat__container input.chat__container__nombre::-moz-placeholder {
+  color: rgb(30, 30, 30);
+}
+.chat__container input.chat__container__nombre:-ms-input-placeholder {
+  color: rgb(30, 30, 30);
+}
+.chat__container input.chat__container__nombre::placeholder {
+  color: rgb(30, 30, 30);
+}
+.chat__container__nombre--label {
+  display: none;
+}
+.chat__container__mensajes {
+  width: 100%;
+  min-height: 300px;
+  background: rgb(120, 120, 120);
+  border-radius: 0.8em;
+  margin: 0 auto;
+}
+.chat__container__envio {
+  width: 100%;
+}
+.chat__container__envio button {
+  padding: 0.2em;
+  border-radius: 0.4em;
+  background: rgb(120, 120, 120);
+  color: coral;
 }
 
 footer {

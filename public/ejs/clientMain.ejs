@@ -20,32 +20,42 @@
 </section>
 
 <section class="productos" id="productos">
-    <h2>PRODUCTOS</h2>
-        <% if (items){ %>
-            <table class="productos__table">
+    <h2>VER PRODUCTOS</h2>
+    <% if (items){ %>
+        <table class="productos__table">
+            <tr>
+                <th>TITULO</th>
+                <th>PORTADA</th>
+                <th>PRECIO</th>
+            </tr>
+
+            <% items.forEach(item=>{%>
                 <tr>
-                    <th>TITULO</th>
-                    <th>PORTADA</th>
-                    <th>PRECIO</th>
+                    <td>
+                        <%=item.title%>
+                    </td>
+                    <td><img alt="item img" src="<%=item.thumbnail%>" /></td>
+                    <td>$<%=item.price%> USD</td>
                 </tr>
-            
-                <% items.forEach(item=>{%> 
-                <tr>
-                    <td><%=item.title%></td>
-                    <td><img alt="item img" src="<%=item.thumbnail%>"  /></td>
-                    <td>$<%=item.price%>  USD</td>
-                </tr>
-                <% })  %> 
-            </table>
+                <% }) %>
+        </table>
         <% } else {%>
-    <p>No hay productos cargados.</p>
-    <% } %>
+            <p>No hay productos cargados.</p>
+            <% } %>
 </section>
 
 <section class="chat" id="chat">
     <h2>CHAT</h2>
-    <div>
+    <div class="chat__container">
+        <input class="chat__container__nombre" type="text" name="nombre" id="chatNombre" placeholder="Ingresar nombre..." required>
+        <label class="chat__container__nombre--label" for="chatNombre">Nombre:</label>
+        <div class="chat__container__mensajes">
 
+        </div>
+        <div class="chat__container__envio">
+            <input class="chat__container__nombre" type="text" name="nombre" id="chatNombre" placeholder="Escribir mensaje..." required>
+            <button>Enviar</button>
+        </div>
     </div>
 </section>
 

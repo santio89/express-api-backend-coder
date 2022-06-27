@@ -5,6 +5,7 @@ const routesView = require("./routes/indexViewRoutes").router;
 const { contenedorProductos } = require("./controllers/apiController")
 const { Server: IOServer } = require("socket.io");
 const {upload} = require("./controllers/viewController");
+const fs = require("fs");
 
 const path = require("path")
 const app = express();

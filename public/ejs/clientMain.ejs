@@ -1,0 +1,54 @@
+<header>
+    <nav>
+        <a href="/">EXPRESS SERVER</a>
+        <ul>
+            <li><a href="#formulario">Cargar</a></li>
+            <li><a href="#productos">Ver</a></li>
+            <li><a href="#chat">Chat</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="formulario" id="formulario">
+    <h2>CARGAR PRODUCTO</h2>
+    <form class="formulario__form">
+        <label>Título: <input type="text" name="title" required id="form__title"></label>
+        <label>Precio: <input type="text" name="price" required id="form__price"></label>
+        <label>Imagen - URL: <input type="text" name="thumbnail" id="form__imgUrl"></label>
+        <button>Enviar</button>
+    </form>
+</section>
+
+<section class="productos" id="productos">
+    <h2>PRODUCTOS</h2>
+        <% if (items){ %>
+            <table class="productos__table">
+                <tr>
+                    <th>TITULO</th>
+                    <th>PORTADA</th>
+                    <th>PRECIO</th>
+                </tr>
+            
+                <% items.forEach(item=>{%> 
+                <tr>
+                    <td><%=item.title%></td>
+                    <td><img alt="item img" src="<%=item.thumbnail%>"  /></td>
+                    <td>$<%=item.price%>  USD</td>
+                </tr>
+                <% })  %> 
+            </table>
+        <% } else {%>
+    <p>No hay productos cargados.</p>
+    <% } %>
+</section>
+
+<section class="chat" id="chat">
+    <h2>CHAT</h2>
+    <div>
+
+    </div>
+</section>
+
+<footer>
+    <p>footer</p>
+</footer>

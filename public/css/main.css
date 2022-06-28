@@ -348,6 +348,8 @@ section {
   padding: 0 0.28em;
   font-size: 1.2em;
   text-shadow: 1px 1px 0 rgb(120, 120, 120);
+  font-weight: bold;
+  color: coral;
 }
 .chat__container input {
   color: rgb(30, 30, 30);
@@ -401,18 +403,44 @@ section {
 .chat__container__nombre--label {
   display: none;
 }
+.chat__container__mensajesBox {
+  outline: 4px solid rgb(90, 90, 90);
+  overflow: hidden;
+  background: rgb(120, 120, 120);
+  border-radius: 0.8em;
+  width: 100%;
+  height: 400px;
+}
 .chat__container__mensajes {
   width: 100%;
-  min-height: 300px;
+  height: 100%;
   background: rgb(120, 120, 120);
   border-radius: 0.8em;
   margin: 0 auto;
   color: rgb(30, 30, 30);
   font-size: clamp(1.2rem, 1.2rem + 10%, 1.6rem);
   padding: 0.4em 0.8em;
+  overflow-y: scroll;
 }
 .chat__container__mensajes div {
   word-break: break-all;
+  background: rgb(120, 120, 120);
+}
+.chat__container__mensajes::-webkit-scrollbar {
+  width: 6px;
+}
+.chat__container__mensajes::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+}
+.chat__container__mensajes__nombre {
+  font-weight: bold;
+  color: coral;
+}
+.chat__container__mensajes__fecha {
+  color: rgb(30, 30, 30);
+}
+.chat__container__mensajes__mensaje {
+  color: white;
 }
 .chat__container__envio {
   width: 100%;

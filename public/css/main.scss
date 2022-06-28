@@ -394,6 +394,8 @@ section {
                 padding: 0 .28em;
                 font-size: 1.2em;
                 text-shadow: 1px 1px 0 rgb(120, 120, 120);
+                font-weight: bold;
+                color: coral;
             }
         }
 
@@ -443,18 +445,48 @@ section {
             display: none;
         }
 
+        &__mensajesBox {
+            outline: 4px solid rgb(90, 90, 90);
+            overflow: hidden;
+            background: rgb(120, 120, 120);
+            border-radius: .8em;
+            width: 100%;
+            height: 400px;
+        }
+
         &__mensajes {
             width: 100%;
-            min-height: 300px;
+            height: 100%;
             background: rgb(120, 120, 120);
             border-radius: .8em;
             margin: 0 auto;
             color: rgb(30, 30, 30);
             font-size: clamp(1.2rem, 1.2rem + 10%, 1.6rem);
             padding: .4em .8em;
+            overflow-y: scroll;
 
-            div{
+            div {
                 word-break: break-all;
+                background: rgb(120, 120, 120);
+            }
+
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 6px;
+            }
+
+            &__nombre{
+                font-weight: bold;
+                color: coral;
+            }
+            &__fecha{
+                color: rgb(30, 30, 30);
+            }
+            &__mensaje{
+                color: white;
             }
         }
 
@@ -502,7 +534,7 @@ footer {
     justify-content: start;
     align-items: center;
 
-    p{
+    p {
         margin-left: 1rem;
     }
 }

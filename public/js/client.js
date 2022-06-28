@@ -4,7 +4,7 @@ async function renderItems(items) {
     /* plantilla */
     const plantillaResponse = await fetch("./ejs/clientMain.ejs");
     const plantilla = await plantillaResponse.text();
-    const html = ejs.render(plantilla, {items: items.productos});
+    const html = ejs.render(plantilla, {productos: items.productos, mensajes: items.mensajes});
     document.getElementById('root').innerHTML = html;
     /* form */
     const form = document.querySelector(".formulario__form");
@@ -22,21 +22,24 @@ async function renderItems(items) {
     })
 
     /* chat */
-    const mensajesContainer = document.querySelector(".chat__container__mensajes");
     const chatForm = document.querySelector(".chat__container");
     const chatNombre = document.querySelector(".chat__container__nombre");
     const chatMensaje = document.querySelector(".chat__container__mensaje");
-
-    items.mensajes.forEach(mensaje => {
-        mensajesContainer.innerHTML += `<div>${mensaje}</div>`
-    })
+    const mensajesContainer = document.querySelector(".chat__container__mensajes");
+    mensajesContainer.scroll({ top: mensajesContainer.scrollHeight, behavior: "smooth"})
 
     chatForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        socket.emit("client:mensaje", chatMensaje.value);
+
+        const mensajeEnvio = {
+            nombre: chatNombre.value,
+            mensaje: chatMensaje.value,
+            fecha: new Date().toLocaleString()
+        }
+
+        socket.emit("client:mensaje", mensajeEnvio);
         chatMensaje.value = "";
     })
-
 }
 
 function renderProducto(item) {
@@ -48,9 +51,11 @@ function renderProducto(item) {
 </tr>`
 }
 
-function renderMensaje(mensaje) {
+function renderMensaje(mensajeEnvio) {
     const mensajesContainer = document.querySelector(".chat__container__mensajes");
-    mensajesContainer.innerHTML += `<div>${mensaje}</div>`;
+    mensajesContainer.innerHTML += `<div><span class="chat__container__mensajes__nombre">${mensajeEnvio.nombre}</span><span class="chat__container__mensajes__fecha"> ${mensajeEnvio.fecha}: </span><span class="chat__container__mensajes__mensaje">${mensajeEnvio.mensaje}</span></div>`;
+
+    mensajesContainer.scroll({ top: mensajesContainer.scrollHeight, behavior: "smooth"})
 }
 
 socket.on("server:items", items => {
@@ -64,6 +69,6 @@ socket.on("server:producto", producto => {
 socket.on("server:mensajes", mensajes => {
     renderMensajes(mensajes)
 })
-socket.on("server:mensaje", mensaje => {
-    renderMensaje(mensaje)
+socket.on("server:mensaje", mensajeEnvio => {
+    renderMensaje(mensajeEnvio)
 })

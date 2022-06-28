@@ -76,10 +76,10 @@ io.on("connection", async socket => {
         io.emit("server:producto", producto);
     })
 
-    socket.on("client:mensaje", async mensaje => {
-        await chat.save(mensaje);
+    socket.on("client:mensaje", async mensajeEnvio => {
+        await chat.save(mensajeEnvio);
 
-        io.emit("server:mensaje", mensaje);
+        io.emit("server:mensaje", mensajeEnvio);
     })
 })
 

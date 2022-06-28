@@ -333,7 +333,7 @@ section {
   flex-flow: column wrap;
   justify-content: center;
   align-items: start;
-  gap: 1rem;
+  gap: 1.2rem;
   width: 100%;
   width: clamp(280px, 100%, 800px);
 }

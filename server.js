@@ -2,9 +2,12 @@ const express = require("express")
 const { engine } = require('express-handlebars');
 const routesApi = require("./routes/indexApiRoutes").router;
 const routesView = require("./routes/indexViewRoutes").router;
+const ChatContainer = require("./Chat")
 const { contenedorProductos } = require("./controllers/apiController")
 const { Server: IOServer } = require("socket.io");
 const fs = require("fs")
+
+const chat = new ChatContainer("./chatMensajes.txt");
 
 const path = require("path")
 const app = express();
@@ -62,12 +65,21 @@ const io = new IOServer(expressServer);
 
 io.on("connection", async socket => {
     console.log("Nuevo usuario conectado")
-    socket.emit("server:productos", contenedorProductos.productos)
 
-    socket.on("client: producto", async producto =>{
-        contenedorProductos.save(producto)
+    const mensajes = await chat.getAll();
 
-        io.emit("server:producto", producto)
+    socket.emit("server:items", {productos: contenedorProductos.productos, mensajes})
+
+    socket.on("client: producto", async producto => {
+        contenedorProductos.save(producto);
+
+        io.emit("server:producto", producto);
+    })
+
+    socket.on("client:mensaje", async mensaje => {
+        await chat.save(mensaje);
+
+        io.emit("server:mensaje", mensaje);
     })
 })
 

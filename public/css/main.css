@@ -409,6 +409,7 @@ section {
   margin: 0 auto;
   color: rgb(30, 30, 30);
   font-size: clamp(1.2rem, 1.2rem + 10%, 1.6rem);
+  padding: 0.4em 0.8em;
 }
 .chat__container__envio {
   width: 100%;

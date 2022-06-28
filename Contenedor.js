@@ -1,14 +1,13 @@
 class Contenedor {
     constructor() {
         this.productos = [];
+        this.idCount = 1;
     }
 
-    static idCount = 1;
-
     save(objeto) {
-        objeto.id = Contenedor.idCount;
+        objeto.id = this.idCount;
         this.productos.push(objeto)
-        Contenedor.idCount++;
+        this.idCount++;
 
         return objeto;
     }

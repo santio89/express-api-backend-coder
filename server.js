@@ -4,8 +4,7 @@ const routesApi = require("./routes/indexApiRoutes").router;
 const routesView = require("./routes/indexViewRoutes").router;
 const { contenedorProductos } = require("./controllers/apiController")
 const { Server: IOServer } = require("socket.io");
-const {upload} = require("./controllers/viewController");
-const fs = require("fs");
+const fs = require("fs")
 
 const path = require("path")
 const app = express();
@@ -66,11 +65,7 @@ io.on("connection", async socket => {
     socket.emit("server:productos", contenedorProductos.productos)
 
     socket.on("client: producto", async producto =>{
-        if (producto.imgUrl){
-            contenedorProductos.save(producto)
-        } else{
-            console.log(producto.imgFile)
-        }
+        contenedorProductos.save(producto)
 
         io.emit("server:producto", producto)
     })

@@ -12,6 +12,29 @@ html {
     scroll-behavior: smooth;
     font-size: 100%;
     scroll-padding-top: 60px;
+
+    /* scrollbar standard */
+    scrollbar-width: thin;
+    scrollbar-color: rgb(30, 30, 30) coral;
+
+
+    /* INICIO SCROLLBAR */
+    /* width */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    /* track */
+    ::-webkit-scrollbar-track {
+        background: rgb(50, 50, 50);
+    }
+
+    /* handle */
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(180deg, rgba(30, 30, 30) 50%, coral 50%);
+    }
+
+    /* FIN SCROLLBAR */
 }
 
 ul,
@@ -115,8 +138,8 @@ header {
             font-weight: bold;
             font-size: 1.8rem;
             margin-left: 1rem;
-            text-decoration: none;
             padding: .2em;
+            text-decoration: none;
             border-radius: .1em;
 
             &:focus-visible {
@@ -187,7 +210,6 @@ section {
 }
 
 .formulario {
-
     form {
         max-width: 800px;
         margin-left: auto;
@@ -197,11 +219,11 @@ section {
         justify-content: start;
         align-items: start;
         gap: .8rem;
-        font-size: clamp(1.2rem, 1.2rem + 10%, 1.4rem);
         background: rgb(30, 30, 30);
         outline: 4px solid rgb(90, 90, 90);
         border-radius: .8em;
         padding: 1em;
+        font-size: clamp(1.2rem, 1.2rem + 40%, 1.6rem);
 
         label {
             display: flex;
@@ -291,14 +313,6 @@ section {
 }
 
 .productos {
-
-    p {
-        font-size: 1.8rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        color: white;
-    }
-
     table {
         max-width: 1200px;
         margin-left: auto;
@@ -311,7 +325,7 @@ section {
         background: rgb(30, 30, 30);
         outline: 4px solid rgb(90, 90, 90);
         border-radius: .8em;
-        font-size: clamp(1.2rem, 1.2rem + 10%, 1.4rem);
+        font-size: clamp(1.2rem, 1.2rem + 10%, 1.6rem);
 
         tr,
         th,
@@ -358,7 +372,7 @@ section {
 }
 
 .chat {
-    font-size: clamp(1.2rem, 1.2rem + 10%, 1.4rem);
+    font-size: clamp(1.2rem, 1.2rem + 10%, 1.6rem);
 
     &__container {
         display: flex;
@@ -368,6 +382,20 @@ section {
         gap: 1rem;
         width: 100%;
         width: clamp(280px, 100%, 800px);
+
+        fieldset {
+            border-radius: 2em;
+            border: 2px dashed coral;
+            text-align: center;
+            align-self: center;
+            line-height: 1;
+
+            legend {
+                padding: 0 .28em;
+                font-size: 1.2em;
+                text-shadow: 1px 1px 0 rgb(120, 120, 120);
+            }
+        }
 
         input {
             color: rgb(30, 30, 30);
@@ -379,23 +407,39 @@ section {
             font-size: .8em;
             background: rgb(120, 120, 120);
 
+            &.chat__container__mensaje {
+                color: coral;
+                font-weight: bold;
+                background: transparent;
+                padding: .2em .4em;
+                font-size: 1.2em;
+                border-bottom: 2px dashed coral;
+                align-self: center;
+                width: 100%;
+                padding-right: 100px;
+
+                &::placeholder {
+                    color: rgb(30, 30, 30)
+                }
+            }
+
             &.chat__container__nombre {
                 color: coral;
                 font-weight: bold;
                 background: transparent;
                 padding: .2em;
                 font-size: 1.2em;
-                border-bottom: 2px dashed coral;
                 align-self: center;
                 width: 100%;
-    
-                &::placeholder{
+                text-align: center;
+
+                &::placeholder {
                     color: rgb(30, 30, 30)
                 }
             }
         }
-        
-        &__nombre--label{
+
+        &__nombre--label {
             display: none;
         }
 
@@ -405,31 +449,57 @@ section {
             background: rgb(120, 120, 120);
             border-radius: .8em;
             margin: 0 auto;
+            color: rgb(30, 30, 30);
+            font-size: clamp(1.2rem, 1.2rem + 10%, 1.6rem);
         }
 
         &__envio {
             width: 100%;
+            position: relative;
 
-            button{
+            button {
                 padding: .2em;
-                border-radius: .4em;
+                border-radius: .2em;
                 background: rgb(120, 120, 120);
                 color: coral;
+                position: absolute;
+                right: .2em;
+                will-change: transform;
+                font-weight: bold;
+                text-shadow: 1px 1px 0 rgb(30, 30, 30);
+
+                &:hover,
+                &:focus {
+                    outline: 1px dashed rgb(120, 120, 120);
+                }
+
+                &:active {
+                    transform: translate(1px, 1px)
+                }
             }
         }
 
-        
+
     }
 }
 
 footer {
     width: 100%;
     height: 40px;
-    color: rgb(30, 30, 30);
+    color: coral;
     padding: .4em;
-    background: coral;
+    background: linear-gradient(45deg, rgb(30, 30, 30) 80%, coral 80%);
     font-weight: bold;
     margin-top: auto;
+    font-size: clamp(1.2rem, 1.2rem + 10%, 1.6rem);
+    padding: 1.2em 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    p{
+        margin-left: 1rem;
+    }
 }
 
 .error404 {

@@ -411,6 +411,9 @@ section {
   font-size: clamp(1.2rem, 1.2rem + 10%, 1.6rem);
   padding: 0.4em 0.8em;
 }
+.chat__container__mensajes div {
+  word-break: break-all;
+}
 .chat__container__envio {
   width: 100%;
   position: relative;

@@ -49,12 +49,12 @@
     <form class="chat__container">
         <fieldset>
             <legend>USER</legend>
-            <input class="chat__container__nombre" type="text" name="nombre" id="chatNombre" placeholder="Ingresar nombre..." required autocomplete="off">
+            <input class="chat__container__nombre" type="text" name="nombre" id="chatNombre" placeholder="Ingresar nombre..." required autocomplete="off" maxlength="200">
             <label class="chat__container__nombre--label" for="chatNombre">Nombre:</label>
         </fieldset>
         <div class="chat__container__mensajes"></div>
         <div class="chat__container__envio">
-            <input class="chat__container__mensaje" type="text" name="nombre" id="chatNombre" placeholder="Escribir mensaje..." required autocomplete="off">
+            <input class="chat__container__mensaje" type="text" name="nombre" id="chatNombre" placeholder="Escribir mensaje..." required autocomplete="off" maxlength="500">
             <button type="submit">Enviar</button>
         </div>
     </form>

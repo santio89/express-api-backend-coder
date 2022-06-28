@@ -452,6 +452,10 @@ section {
             color: rgb(30, 30, 30);
             font-size: clamp(1.2rem, 1.2rem + 10%, 1.6rem);
             padding: .4em .8em;
+
+            div{
+                word-break: break-all;
+            }
         }
 
         &__envio {

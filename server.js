@@ -42,7 +42,7 @@ app.use("/api/productos", routesApi)
 
 /* not found */
 app.use((req, res) => {
-    res.status(404).render("404");
+    res.status(404).json({error404: "Ruta no encontrada"});
 })
 
 // error handler

@@ -6,7 +6,8 @@ async function renderItems(items) {
     const plantilla = await plantillaResponse.text();
     const html = ejs.render(plantilla, {productos: items.productos, mensajes: items.mensajes});
     document.getElementById('root').innerHTML = html;
-    /* form */
+    
+    /* productos */
     const form = document.querySelector(".formulario__form");
     form.addEventListener("submit", e => {
         e.preventDefault();

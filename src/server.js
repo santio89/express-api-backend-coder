@@ -7,7 +7,7 @@ const { contenedorProductos } = require("./controllers/apiController")
 const { Server: IOServer } = require("socket.io");
 const fs = require("fs")
 
-const chat = new ChatContainer("./chatMensajes.txt");
+const chat = new ChatContainer("./src/chatMensajes.txt");
 
 const path = require("path")
 const app = express();
@@ -18,7 +18,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
 /* serve static files */
-app.use(express.static(path.join(__dirname, "./public")))
+app.use(express.static(path.join(__dirname, "../public")))
 
 
 /* handlebars config */

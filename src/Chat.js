@@ -27,8 +27,9 @@ class Chat{
             if (err.code === 'ENOENT') {
                 /* si el archivo no existe, lo creo */
                 await fs.promises.writeFile(this.archivo, "");
+                return this.mensajes;
             } else {
-                console.log("Error guardando objeto en el fs. Code: ", err);
+                console.log("Error buscando archivos en el fs. Code: ", err);
             }
         }
     }

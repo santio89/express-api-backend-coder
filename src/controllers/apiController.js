@@ -1,6 +1,6 @@
 /* contenedor principal de productos */
 const Contenedor = require("../Contenedor");
-const contenedorProductos = new Contenedor("./productos.txt");
+const contenedorProductos = new Contenedor("./src/productos.txt");
 contenedorProductos.init();
 /* cargar algunos productos iniciales */
 /* contenedorProductos.save({title: "Trainspotting", price: 20, thumbnail: "https://www.ocimagazine.es/wp-content/uploads/2021/06/trainspotting-cartel.jpg"})

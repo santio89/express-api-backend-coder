@@ -5,7 +5,6 @@ const routesView = require("./routes/indexViewRoutes").router;
 const ChatContainer = require("./Chat")
 const { contenedorProductos } = require("./controllers/apiController")
 const { Server: IOServer } = require("socket.io");
-const fs = require("fs")
 
 const chat = new ChatContainer("./src/chatMensajes.txt");
 

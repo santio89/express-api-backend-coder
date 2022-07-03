@@ -14,9 +14,9 @@
     "start": "node src/server.js",
     "devStart": "nodemon src/server.js"
   },
-  "name": "express-api-backendcoder",
+  "name": "express-api-backend-coder",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "src/server.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
